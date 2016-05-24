@@ -18,7 +18,7 @@ public class AddStudent extends JFrame implements ActionListener{
 	JTextField txmname = new JTextField(10);
 	JTextField txlname = new JTextField(10);
 	JTextField txage = new JTextField(10);
-	JTextField txadd = new JTextField(10);
+	JTextField txadd = new JTextField(10);//Replace with button or addsubject
 	
 	JLabel logo = new JLabel(new ImageIcon("bin/images/Sti.jpg"));
 	
@@ -32,11 +32,11 @@ public class AddStudent extends JFrame implements ActionListener{
 	JButton btnad = new JButton(new ImageIcon("bin/images/useradd.png"));
 	JButton btnback = new JButton("Back");
 	
-	String co[] = {"","BSIT", "BSCoE", "DIT"};
+	String co[] = {"","BSIT", "BSCoE", "DIT"};//Replace course with class
 	JComboBox course = new JComboBox(co);
 	String cor = "";
 	
-	public AddStd() {
+	public AddStudent() {
 		super("Add Student Information");
 		
 		Container pane = getContentPane();
