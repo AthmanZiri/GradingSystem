@@ -120,6 +120,7 @@ public class Calculate extends Connect implements ActionListener{
 		btndel.addActionListener(this);
 		btnback.addActionListener(this);
 		
+		/*
 		try {
 			
 			Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
@@ -128,7 +129,7 @@ public class Calculate extends Connect implements ActionListener{
 			
 		}catch (SQLException e) {
 			
-		}
+		}*/
 	}
 	
 	public void clear() {
