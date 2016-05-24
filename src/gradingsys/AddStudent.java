@@ -93,7 +93,7 @@ public class AddStudent extends Connect implements ActionListener{
 		btnad.addActionListener(this);
 		btnback.addActionListener(this);
 		
-		
+		/*
 		try {
 			
 			Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
@@ -103,7 +103,7 @@ public class AddStudent extends Connect implements ActionListener{
 			
 		}catch (SQLException e) {
 	
-		}
+		}*/
 	}
 	
 	public void clear() {
