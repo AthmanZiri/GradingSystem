@@ -34,9 +34,12 @@ public class AddStudent extends Connect implements ActionListener{
 	String cor = "";
 	
 	public AddStudent() {
-		super("Add Student Information");
+		/*super("Add Student Information");
+		 * 
+		 */
+		frame.setTitle("Add Student Info");
 		
-		Container pane = getContentPane();
+		Container pane = frame.getContentPane();
 		pane.setLayout(null);
 		
 		pane.add(logo);
@@ -160,7 +163,7 @@ public class AddStudent extends Connect implements ActionListener{
 			mn.setResizable(false);
 			mn.setBounds(450,150,425,232);
 			
-			dispose();
+			frame.dispose();
 			
 		}
 	
