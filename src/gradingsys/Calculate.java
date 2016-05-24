@@ -41,9 +41,12 @@ public class Calculate extends Connect implements ActionListener{
 	
 	public Calculate() {
 		// TODO Auto-generated constructor stub
-		super("Grading System");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		Container pane = getContentPane();
+		/*super("Grading System");
+		 * Replace with JFrame method
+		 */
+		frame.setTitle("Grading System");
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		Container pane = frame.getContentPane();//Though deprecated
 		pane.setLayout(null);
 		
 		pane.add(logo);
@@ -232,7 +235,7 @@ public class Calculate extends Connect implements ActionListener{
 				mn.setResizable(false);
 				mn.setBounds(450,150,425,232);
 				
-				dispose();
+				frame.dispose();
 			}
 			
 		/*/	if (source==btndel) {
