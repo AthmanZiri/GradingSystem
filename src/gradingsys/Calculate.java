@@ -157,7 +157,7 @@ public class Calculate extends JFrame implements ActionListener{
 				try {
 					
 					String IDnumber ="";
-					int tmp = 0;
+					int tmp = 0;//sentinel
 					IDnumber = JOptionPane.showInputDialog(null, "Enter ID number to search.", "Grading System", JOptionPane.QUESTION_MESSAGE);
 					st = con.createStatement();
 					ResultSet rs = st.executeQuery("SELECT * FROM tbl_studentinfo WHERE ID_Number = '" + IDnumber + "'");
