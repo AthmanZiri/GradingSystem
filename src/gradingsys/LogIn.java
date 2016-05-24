@@ -6,7 +6,9 @@ import java.awt.*;
 import java.awt.event.*;
 import java.sql.*;
 
-public class LogIn extends JFrame implements ActionListener{
+public class LogIn extends Connect implements ActionListener{
+	
+	JFrame frame = new JFrame();
 
 	JButton btnlog = new JButton(new ImageIcon("bin/images/login.png"));
 	JButton btncan = new JButton(new ImageIcon("bin/images/cancel.png"));
@@ -19,14 +21,10 @@ public class LogIn extends JFrame implements ActionListener{
 	JLabel pass = new JLabel("Password");
 	
 	
-	Connection con;
-	Statement st;
-	PreparedStatement ps;
-	ResultSet rs;
-	
 	public LogIn() {
 		
-		super("LogIn");
+		//super("LogIn");
+		frame.setTitle("LogIn");
 		
 		JPanel pane = new JPanel(new FlowLayout());
 		
@@ -43,8 +41,9 @@ public class LogIn extends JFrame implements ActionListener{
 		btnlog.addActionListener(this);
 		btncan.addActionListener(this);
 		
-		setContentPane(pane);
+		frame.setContentPane(pane);
 		
+		/*
 		try {
 			
 			Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
@@ -60,7 +59,7 @@ public class LogIn extends JFrame implements ActionListener{
 			
 			
 			// TODO: handle exception
-		}
+		}*/
 		
 	}
 	
