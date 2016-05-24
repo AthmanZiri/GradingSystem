@@ -6,12 +6,9 @@ import java.awt.*;
 import java.awt.event.*;
 import java.sql.*;
 
-public class Calculate extends JFrame implements ActionListener{
+public class Calculate extends Connect implements ActionListener{
 
-	Connection con;
-	Statement st;
-	PreparedStatement ps;
-	ResultSet rs;
+	JFrame frame = new JFrame();
 	
 	JTextField txid = new JTextField(10);
 	JTextField txname = new JTextField(10);
