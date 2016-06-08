@@ -6,7 +6,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.sql.*;
 
-public class AddStudent extends Connect implements ActionListener{
+public class AddStudent extends Connect implements Across, ActionListener{
 
 	JFrame frame = new JFrame();
 	
@@ -39,41 +39,41 @@ public class AddStudent extends Connect implements ActionListener{
 		 */
 		frame.setTitle("Add Student Info");
 		
-		Container pane = frame.getContentPane();
-		pane.setLayout(null);
+		//Container frame = frame.getContentPane();
+		frame.setLayout(null);
 		
-		pane.add(logo);
+		frame.add(logo);
 		logo.setBounds(0,0,415,100);
 		
-		pane.add(lab1);
+		frame.add(lab1);
 		lab1.setBounds(100,130,60,10);
-		pane.add(txid);
+		frame.add(txid);
 		txid.setBounds(190,125,100,20);
 		
-		pane.add(lab2);
+		frame.add(lab2);
 		lab2.setBounds(100,160,80,10);
-		pane.add(txfname);
+		frame.add(txfname);
 		txfname.setBounds(190,155,100,20);
 		
-		pane.add(lab3);
+		frame.add(lab3);
 		lab3.setBounds(100,190,96,10);
-		pane.add(txmname);
+		frame.add(txmname);
 		txmname.setBounds(190,185,100,20);
 		
-		pane.add(lab4);
+		frame.add(lab4);
 		lab4.setBounds(100,220,70,20);
-		pane.add(txlname);
+		frame.add(txlname);
 		txlname.setBounds(190, 215, 100, 20);
 		
-		pane.add(lab5);
+		frame.add(lab5);
 		lab5.setBounds(100,250,64,20);
-		pane.add(txage);
+		frame.add(txage);
 		txage.setBounds(190,245,100,20);
 				
-		pane.add(lab6);
+		frame.add(lab6);
 		lab6.setBounds(100,280,60,10);
 		
-		pane.add(course);
+		frame.add(course);
 		course.setSelectedIndex(0);
 		course.addActionListener(new ActionListener() {
 			
@@ -84,10 +84,10 @@ public class AddStudent extends Connect implements ActionListener{
 	
 		course.setBounds(190,275,100,20);
 		
-		pane.add(btnad);
+		frame.add(btnad);
 		btnad.setBounds(160,320,48,48);
 		
-		pane.add(btnback);
+		frame.add(btnback);
 		btnback.setBounds(220,320,70,48);
 		
 		btnad.addActionListener(this);
@@ -159,9 +159,7 @@ public class AddStudent extends Connect implements ActionListener{
 		}if (source==btnback) {
 			
 			Main mn = new Main();
-			mn.setVisible(true);
-			mn.setResizable(false);
-			mn.setBounds(450,150,425,232);
+			mn.showFrame();
 			
 			frame.dispose();
 			
