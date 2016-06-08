@@ -30,7 +30,7 @@ public class AddStudent extends Connect implements ActionListener{
 	JButton btnback = new JButton("Back");
 	
 	String co[] = {"","BSIT", "BSCoE", "DIT"};//Replace course with class
-	JComboBox course = new JComboBox(co);
+	JComboBox<?> course = new JComboBox<String>(co);
 	String cor = "";
 	
 	public AddStudent() {
