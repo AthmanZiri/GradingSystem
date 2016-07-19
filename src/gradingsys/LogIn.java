@@ -6,7 +6,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.sql.*;
 
-public class LogIn extends Connect implements ActionListener{
+public class LogIn extends Connect implements ActionListener, Across{
 	
 	JFrame frame = new JFrame();
 
@@ -43,25 +43,8 @@ public class LogIn extends Connect implements ActionListener{
 		
 		frame.setContentPane(pane);
 		
-		/*
-		try {
-			
-			Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
-			con = DriverManager.getConnection("jdbc:odbc:db1");
-			JOptionPane.showMessageDialog(null, "Connection has been istablished");
-			
-		} catch (ClassNotFoundException e) {
-			JOptionPane.showMessageDialog(null, "Failed to load driver", "Error", JOptionPane.ERROR_MESSAGE);
-			
-			// TODO: handle exception
-		}catch (SQLException e) {
-			JOptionPane.showMessageDialog(null, "Unable to Connect", "Error", JOptionPane.ERROR_MESSAGE);
-			
-			
-			// TODO: handle exception
-		}*/
-		
 	}
+	
 	
 	public void actionPerformed(ActionEvent e) {
 		Object source = e.getSource();
@@ -74,9 +57,9 @@ public class LogIn extends Connect implements ActionListener{
 				String password = "";
 				
 				String struname = txtuser.getText();
-				String strpas = txtpass.getText();
+				char [] strpas = txtpass.getPassword();
 				
-				if (struname.length()==0 || strpas.length()==0) {
+				if (struname.length()==0 || strpas.length==0) {
 					JOptionPane.showMessageDialog(null, "Please enter Username/Password", "Warning", JOptionPane.WARNING_MESSAGE);
 					
 				}else {
@@ -89,7 +72,7 @@ public class LogIn extends Connect implements ActionListener{
 						password = rs.getString("Password");
 						
 					}
-					if (!username.equals(txtuser.getText()) || !password.equals(txtpass.getText())) {
+					if (!username.equals(txtuser.getText()) || !password.equals(txtpass.getPassword())) {
 						
 						JOptionPane.showMessageDialog(null, "Wrong Username/Password", "Try Again", JOptionPane.ERROR_MESSAGE);
 						txtuser.setText("");
@@ -97,12 +80,12 @@ public class LogIn extends Connect implements ActionListener{
 						txtuser.requestFocus(true);
 					}else {
 						JOptionPane.showMessageDialog(null, "Successfully Login", "Sucess", JOptionPane.INFORMATION_MESSAGE);
-						dispose();
+						frame.dispose();
 						
-						Main mn = new Main();
-						mn.setVisible(true);
-						mn.setResizable(false);
-						mn.setBounds(450,250,415,232);
+						new Main();
+						frame.setVisible(true);
+						frame.setResizable(false);
+						frame.setBounds(450,250,415,232);
 						
 					}
 				}
@@ -132,9 +115,7 @@ public class LogIn extends Connect implements ActionListener{
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		LogIn lg = new LogIn();
-		lg.setBounds(450,250,415,232);
-		lg.setVisible(true);
-		lg.setDefaultCloseOperation(EXIT_ON_CLOSE);
+		lg.showFrame();
 
 	}
 

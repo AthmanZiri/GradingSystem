@@ -6,7 +6,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.sql.*;
 
-public class Calculate extends Connect implements ActionListener{
+public class Calculate extends Connect implements Across, ActionListener{
 
 	JFrame frame = new JFrame();
 	
@@ -232,9 +232,7 @@ public class Calculate extends Connect implements ActionListener{
 			if (source==btnback) {
 				
 				Main mn = new Main();
-				mn.setVisible(true);
-				mn.setResizable(false);
-				mn.setBounds(450,150,425,232);
+				mn.showFrame();
 				
 				frame.dispose();
 			}
